@@ -7,7 +7,7 @@ import Forecast from './Forecast';
 
 function ForecastResults() {
   const dispatch = useDispatch();
-
+console.log("CHAU" + useSelector((state) => state.forecast.response))
   const response = useSelector((state) => state.forecast.response);
   const cityIdToSearch = useSelector((state) => state.forecast.cityIdToSearch);
   const fetchState = useSelector((state) => state.forecast.fetchState);

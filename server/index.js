@@ -33,8 +33,11 @@ app.get('/cities', (req, res) => {
 
 // This endpoint proxies requests to openWeather to get current weather data by cityId
 app.get('/forecast', (req, res) => {
+  console.log('HOLAA')
   const { id } = req.query;
   const { units } = req.query;
+    console.log(id)
+      console.log(units)
   axios
     .get(API, {
       params: {
