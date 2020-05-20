@@ -75,7 +75,7 @@ function Forecast(props) {
   const [showWeather, setShowWeather] = useState(false);
 
   const googleMapStaticUrl = 'https://maps.googleapis.com/maps/api/staticmap';
-  const publicApiKey = 'AIzaSyDveVqLJ7zXfLk19P69MBUpj2qPM5Fq-yQ';
+  const publicApiKey = 'AIzaSyDt8Xjtdcj88Snh5BG3JnXJP4qGhHe1OKU';
   const cityMapUrl = `${googleMapStaticUrl}?zoom=10&scale=1&size=568x568&maptype=hybrid&markers=size:mid%7Ccolor:red%7C${lat},${lon}&key=${publicApiKey}`;
   const worldMapUrl = `${googleMapStaticUrl}?zoom=1&scale=1&size=100x100&maptype=terrain&markers=size:tiny%7Ccolor:red%7C${lat},${lon}&key=${publicApiKey}`;
   return (
