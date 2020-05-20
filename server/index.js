@@ -18,6 +18,8 @@ const appid = process.env.API_KEY;
 
 // This endpoint handles city search by name.
 app.get('/cities', (req, res) => {
+  console.log('cities/')
+
   const query = req.query.q;
   const result = [];
   if (query) {
@@ -33,35 +35,35 @@ app.get('/cities', (req, res) => {
 
 // This endpoint proxies requests to openWeather to get current weather data by cityId
 app.get('/forecast', (req, res) => {
-  console.log('HOLAA')
+  console.log('forecast/')
   const { id } = req.query;
   const { units } = req.query;
-    console.log(id)
-      console.log(units)
+
   axios
     .get(API, {
       params: {
         id,
-        units,
         appid
       }
     })
     .then((response) => {
-      console.log("RESPONSE")
+      console.log('response')
+      console.log(response)
+
+
+      console.log('response data')
+      console.log(response.data)
       const responseCountryCode = response.data.sys.country;
+
       const countryData = countries.filter((country) =>
         country.alpha2Code.toLowerCase().includes(responseCountryCode.toLowerCase())
       )[0];
       res.status(response.status).send(JSON.stringify({ ...response.data, extraData: { ...countryData } }));
     })
+
     .catch((error) => {
-      if (error.response) {
-        res.status(error.response.status).send(error.response.data);
-      } else if (error.request) {
-        res.status(400).send(error.request);
-      } else {
-        res.status(500).send(error.message);
-      }
+      console.log(error)
+
       res.status(500).send(error.config);
     });
 });
