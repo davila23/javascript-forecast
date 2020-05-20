@@ -47,6 +47,7 @@ app.get('/forecast', (req, res) => {
       }
     })
     .then((response) => {
+      console.log("RESPONSE")
       const responseCountryCode = response.data.sys.country;
       const countryData = countries.filter((country) =>
         country.alpha2Code.toLowerCase().includes(responseCountryCode.toLowerCase())
