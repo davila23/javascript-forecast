@@ -1,4 +1,4 @@
-## Weather App
+## Rottay - Weather App
 
 _(a functional React/Redux skills demo app)_
 
