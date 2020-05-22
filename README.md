@@ -3,6 +3,8 @@
 _(a functional React/Redux skills demo app)_
 
 ### > [Link to online production build](https://javascript-forecast.herokuapp.com/) <
+** Wait for Heroku deploy the project. if it gives an error when finishing, refresh the page.
+
 
 ### Frontend:
 
